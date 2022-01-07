@@ -13,3 +13,10 @@ lambda_build: test
 
 lambda_release: lambda_build
 	bin/make-lambda-release $(S3_BUCKET) $(VERSION)
+
+install: pre-commit-install test
+	go install github.com/trussworks/truss-aws-tools/...
+
+.PHONY: test
+test:
+	bin/make-test
