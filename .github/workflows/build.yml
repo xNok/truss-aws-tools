@@ -20,3 +20,8 @@ jobs:
 
     - name: Build
       run: make lambda_build
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: truss-aws-tools
+        path: truss-aws-tools.zip
