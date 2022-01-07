@@ -8,7 +8,7 @@ go_version: .go_version.stamp
 	bin/check-go-version
 	touch .go_version.stamp
 
-lambda_build: pre-commit-install test
+lambda_build: test
 	bin/make-lambda-build
 
 lambda_release: lambda_build
